@@ -35,18 +35,30 @@
     } else {
         [sender setTitle:@"O" forState:UIControlStateNormal];
     }
+
     if ([sender isEqual: @" "]) {
         [sender setEnabled:YES];
-//        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    } else if ([sender isEqual: @"X"]) {
+    } else {
         [sender setEnabled:NO];
         [sender setTitleColor:[UIColor blueColor] forState:UIControlStateDisabled];
-    } else if ([sender isEqual: @"O"]) {
-        [sender setEnabled:NO];
-        [sender setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
-    } else {
-        return;
     }
+    
+//
+//    } else if ([sender isEqual: @"X"]) {
+//        [sender setEnabled:NO];
+//        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateDisabled];
+//        
+//    } else if ([sender isEqual: @"O"]) {
+//        [sender setEnabled:NO];
+//        [sender setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
+//        
+//    }
+//      else {
+//        [sender setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
+//        
+//    }
+
+
     self.toggle = !self.toggle;
     if ([self.whichPlayerLabel.text isEqual: @"Player One - Go!"]) {
         self.whichPlayerLabel.text = @"Player Two - Go!";
