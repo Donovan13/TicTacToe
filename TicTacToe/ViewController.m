@@ -26,11 +26,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
-    self.buttonOne.currentAttributedTitle = ]
+    self.whichPlayerLabel.text = @"Player One - Go!";
+    if ([self.whichPlayerLabel.text isEqual: @"Player One - Go!"]) {
+        NSLog(@"The next player will be Player Two.");
+    }
+    else {
+        NSLog(@"Why isn't this working?");
+    }
 }
 
 
