@@ -26,17 +26,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.whichPlayerLabel.text = @"Player One - Go!";
 }
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
-    self.whichPlayerLabel.text = @"Player One - Go!";
-    if ([self.whichPlayerLabel.text isEqual: @"Player One - Go!"]) {
-        NSLog(@"The next player will be Player Two.");
+    if (!self.toggle) {
+        [sender setTitle:@"x" forState:UIControlStateNormal];
+    } else {
+        [sender setTitle:@"o" forState:UIControlStateNormal];
     }
-    else {
-        NSLog(@"Why isn't this working?");
-    }
-}
+    self.toggle = !self.toggle;
+}   
 
 
 @end
