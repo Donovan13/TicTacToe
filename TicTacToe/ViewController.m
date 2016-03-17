@@ -31,12 +31,16 @@
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
     if (!self.toggle) {
-        [sender setTitle:@"x" forState:UIControlStateNormal];
+        [sender setTitle:@"X" forState:UIControlStateNormal];
     } else {
-        [sender setTitle:@"o" forState:UIControlStateNormal];
+        [sender setTitle:@"O" forState:UIControlStateNormal];
     }
     self.toggle = !self.toggle;
-}   
-
+    if ([self.whichPlayerLabel.text isEqual: @"Player One - Go!"]) {
+        self.whichPlayerLabel.text = @"Player Two - Go!";
+    } else {
+        self.whichPlayerLabel.text = @"Player One - Go!";
+    }
+}
 
 @end
